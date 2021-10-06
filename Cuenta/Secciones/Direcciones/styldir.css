@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #804000;
+	font-family: 'Lato', sans-serif;
+}
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0 40px;
+    width: 100%;
+    height: 90px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header i {
+    font-size: 70px;
+    color: #fff;
+}
+
+header .logo {
+    position: absolute;
+    right: 80px;
+}
+
+header .logo img {
+    width: 100px;
+    height: 85px;
+    border-radius: 50%;
+}
+
+/* ---------- Seccion de Direccion ---------- */
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+    display: flex;
+}
+
+.container .formu {
+    width: 100%;
+    height: 100%;
+    background-image: url(img-direc/fondo-1.jpg);
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .formu h1 {
+    text-align: center;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+
+.container .formu form {
+    width: 90%;
+    height: 90%;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container .formu form .inputBox {
+    position: relative;
+}
+
+.container .formu form .inputBox input {
+    position: relative;
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 40px;
+    color: #000;
+    padding-left: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    border-bottom: 2px solid green;
+    resize: none;
+}
+
+.container .formu form input[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    font-size: 30px;
+    margin-top: -10px;
+    padding: 8px 20px;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    align-self: center;
+}
+
+.container .formu form input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+.container .formu form .inputBox span {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: green;
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.container .formu form .inputBox input:focus ~ span,
+.container .formu form .inputBox input:valid ~ span {
+    transform: translateY(-24px);
+}
+
+/* ---------- Seccion de Agrega Direccion ---------- */
+.container .direc {
+    width: 100%;
+    height: 100%;
+    margin-left: 5px;
+    background-image: url(img-direc/fondo-2.png);
+}
+
+.container .direc .box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background-color: #001e2d;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border:  2px solid rgba(0, 0, 0, 0.5);
+}
+
+.container .direc .box .mi {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .direc .box .mi h2 {
+    padding-top: 10px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.container .direc .box .mi .direccion {
+    width: 90%;
+    height: 85%;
+    padding: 20px 0;
+    overflow: auto;
+}
+
+.container .direc .box .mi .direccion .insert {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.container .direc .box .mi .direccion .insert i {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+.container .direc .box .mi .direccion .insert p {
+    color: #fff;
+}
+
+.container .direc .box .mi .direccion .insert .elim {
+    padding: 5px;
+    background-color: #000;
+    color: red;
+    border: 2px solid red;
+    cursor: pointer;
+}
+
+.container .direc .box .mi .direccion .insert input {
+    align-self: center;
+    margin-left: 10px;
+}
+
+.container .direc .box svg,
+.container .direc .box svg rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+}
+
+.container .direc .box svg rect {
+    stroke: #0093ff;
+    stroke-width: 4;
+    stroke-dasharray: 500;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0% {stroke-dashoffset: 1000;}
+    100% {stroke-dashoffset: 0;}
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width:991px) {
+
+    header {
+        height: 70px;
+       padding: 0 20px;
+    }
+    
+    header i {
+        font-size: 40px;
+    }
+    
+    header .logo  {
+        right: 20px;
+    }
+    
+    header .logo img {
+        width: 70px;
+        height: 60px;
+    }
+
+    /* ---------- Seccion de Direccion ---------- */
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .container .formu {
+        height: 500px;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    
+    .container .formu h1 {
+        font-size: 20px;
+    }
+
+    .container .formu form input[type="submit"] {
+        font-size: 20px;
+        width: 50%;
+    }
+    
+    /* ---------- Seccion de Agrega Direccion ---------- */
+    .container .direc {
+        height: 400px;
+        margin: 0;
+    }
+    
+    .container .direc .box {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .container .direc .box .mi h2 {
+        font-size: 20px;
+    }
+    
+    .container .direc .box .mi .direccion .insert p {
+        font-size: 15px;
+    }
+    
+    .container .direc .box .mi .direccion .insert .elim {
+        padding: 2px;
+        margin-left: 5px;
+    }
+
+    .container .direc .box svg rect {
+        stroke-dasharray: 300;
+        stroke-width: 2;
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylcuent.css">
+    <!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/906c5a8b2a.js" crossorigin="anonymous"></script>
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<title>Coffe Place</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="img-cuenta/fondo.jpg" alt="ImgLogo" class="banner">
+        <a href="#" class="logo"><img src="img-cuenta/Logo.jpg" alt="Logo"></a>
+        <div class="toggle"></div>
+
+        <nav>
+            <ul>
+                <li><a href="../Pagina Principal/principal.html">Home</a></li>
+                <li class="activado"><a href="./cuenta.html">Mi Cuenta</a></li>
+                <li><a href="../Productos/prod.html">Ordenar</a></li>
+                <li><a href="../Promos/promo.html">Promociones</a></li>
+                <li><a href="../index.html">Salir</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="contenedor">
+
+        <section class="mi">
+            <h1>Mi Perfil</h1>
+        </section>
+
+        <section class="usuario">
+            <i class="fas fa-id-badge"></i>
+            <p>Nombre Apellido</p>
+        </section>
+
+        <section class="targetas">
+            <a href="./Secciones/Targeta/targeta.html">
+                <h2>Mi Targeta Pago</h2>
+            </a>
+        </section>
+
+        <section class="direcciones">
+            <a href="./Secciones/Direcciones/direc.html">
+                <h2>Mi Dirección</h2>
+            </a>
+        </section>
+
+        <section class="informacion">
+            <h1>Información</h1>
+        </section>
+
+        <section class="preguntas">
+            <a href="./Secciones/Preguntas/preguntas.html">
+                <h2>Preguntas Frecuentes</h2>
+            </a>
+        </section>
+
+        <section class="tyc">
+            <a href="./Secciones/Ter y Con/terminos.html">
+                <h2>Términos y Condiciones</h2>
+            </a>
+        </section>
+
+        <section class="aviso">
+            <a href="#">    
+                <h2>Aviso de Privasidad</h2>
+            </a>
+        </section>
+
+        <section class="cliente">
+            <a href="#">
+                <h2>Servicios al Cliente</h2>
+            </a>
+        </section>
+
+    </div>
+
+    <script>
+        //Para nav
+        const nav = document.querySelector('nav');
+        document.querySelector('.toggle').onclick = function() {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #804000;
+}
+
+/* ---------- Seccion de header ---------- */
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0 40px;
+    width: 100%;
+    height: 90px;
+    background: #000;
+}
+
+header .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+header .logo {
+    position: absolute;
+    left: 80px;
+}
+
+header .logo img {
+    width: 100px;
+    height: 85px;
+    border-radius: 50%;
+}
+/* ---------- Termina header ---------- */
+
+/* ---------- Empieza Barra de Navegacion ---------- */
+nav {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 16px;
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li.activado {
+    border-top: 3px solid #DBA37D;
+    border-bottom: 3px solid #DBA37D;
+}
+
+nav ul li a {
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #DBA37D;
+}
+/* ---------- Termina Barra de Navegacion ---------- */
+
+.contenedor {
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    padding: 0 16px;
+    margin-top: 20px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: (6, auto);
+
+    grid-template-areas: "mi          mi          mi          mi          mi          mi          mi          mi"
+                         "usuario     usuario     usuario     usuario     usuario     usuario     usuario     usuario"
+                         "targetas    targetas    targetas    targetas    direcciones direcciones direcciones direcciones"
+                         "informacion informacion informacion informacion informacion informacion informacion informacion"
+                         "preguntas   preguntas   preguntas   preguntas   tyc         tyc         tyc         tyc"
+                         "aviso       aviso       aviso       aviso       cliente     cliente     cliente     cliente";
+}
+
+/* ---------- Seccion Mi Perfil ---------- */
+.contenedor .mi {
+    grid-area: mi;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.contenedor .mi h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    color: #fff; 
+}
+
+/* ---------- Seccion de Usuario ---------- */
+.contenedor .usuario {
+    grid-area: usuario;
+    width: 100%;
+    height: 400px;
+    background-image: url(img-cuenta/fondo-2.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.contenedor .usuario i {
+    font-size: 200px;
+    color: #834f23;
+    -webkit-text-stroke: 4px #000;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.contenedor .usuario p {
+    margin-top: 15px;
+    background-color: #DBA37D;
+    font-size: 50px;
+    padding: 10px;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+
+/* ---------- Seccion de mis Tergetas ---------- */
+.contenedor .targetas {
+    grid-area: targetas;
+    width: 100%;
+    height: 100px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+                5px 5px 5px rgba(0,0,0,0.3),
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contenedor .targetas a {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background-color: #804000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.contenedor .targetas:hover a {
+    transform: translateY(-20px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+.contenedor .targetas h2 {
+    font-size: 40px;
+    color: #000;
+}
+
+/* ---------- Seccion de Direcciones ---------- */
+.contenedor .direcciones {
+    grid-area: direcciones;
+    width: 100%;
+    height: 100px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+                5px 5px 5px rgba(0,0,0,0.3),
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contenedor .direcciones a {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background-color: #804000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.contenedor .direcciones:hover a {
+    transform: translateY(-20px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+.contenedor .direcciones h2 {
+    font-size: 40px;
+    color: #000;
+}
+
+/* ---------- Seccion de Informacion ---------- */
+.contenedor .informacion {
+    grid-area: informacion;
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .informacion h1 {
+    font-size: 70px;
+    color: #fff;
+}
+
+/* ---------- Seccion de Preguntas ---------- */
+.contenedor .preguntas {
+    grid-area: preguntas;
+    width: 100%;
+    height: 100px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+                5px 5px 5px rgba(0,0,0,0.3),
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contenedor .preguntas a {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background-color: #804000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.contenedor .preguntas:hover a {
+    transform: translateY(-20px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+.contenedor .preguntas h2 {
+    font-size: 40px;
+    color: #000;
+}
+
+
+/* ---------- Seccion de terminos y condiciones ---------- */
+.contenedor .tyc {
+    grid-area: tyc;
+    width: 100%;
+    height: 100px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+                5px 5px 5px rgba(0,0,0,0.3),
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contenedor .tyc a {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background-color: #804000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.contenedor .tyc:hover a {
+    transform: translateY(-20px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+.contenedor .tyc h2 {
+    font-size: 40px;
+    color: #000;
+}
+
+
+/* ---------- Seccion de aviso de privacidad ---------- */
+.contenedor .aviso {
+    grid-area: aviso;
+    width: 100%;
+    height: 100px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+                5px 5px 5px rgba(0,0,0,0.3),
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contenedor .aviso a {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background-color: #804000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.contenedor .aviso:hover a {
+    transform: translateY(-20px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+.contenedor .aviso h2 {
+    font-size: 40px;
+    color: #000;
+}
+
+/* ---------- Seccion de cerrar secion ---------- */
+.contenedor .cliente {
+    grid-area: cliente;
+    width: 100%;
+    height: 100px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+                5px 5px 5px rgba(0,0,0,0.3),
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contenedor .cliente a {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background-color: #804000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.contenedor .cliente:hover a {
+    transform: translateY(-20px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+.contenedor .cliente h2 {
+    font-size: 40px;
+    color: #000;
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width:991px) {
+    
+    header {
+        height: 90px;
+    }
+
+    header .logo {
+        left: 16px;
+        top: 5px;
+    }
+
+    header .banner {
+        opacity: 0;
+    }
+
+    header .logo img {
+        width: 95px;
+        height: 80px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav.active ul {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 90px);
+        background-image: url(img-cuenta/fondo-galletas.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+    }
+
+    nav ul li a {
+        font-size: 2em;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        color: #000;
+        font-weight: 700;
+    }
+
+    header .toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #fff url(img-cuenta/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header .toggle.active {
+        background: #fff url(img-cuenta/close.png);
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }  
+
+    .contenedor {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: (8, auto);
+    
+        grid-template-areas: "mi          mi          mi          mi"
+                             "usuario     usuario     usuario     usuario"
+                             "targetas    targetas    targetas    targetas"
+                             "direcciones direcciones direcciones direcciones"
+                             "informacion informacion informacion informacion"
+                             "preguntas   preguntas   preguntas   preguntas"
+                             "tyc         tyc         tyc         tyc"
+                             "aviso       aviso       aviso       aviso"
+                             "cliente     cliente     cliente     cliente";
+    }
+
+    /* ---------- Seccion Mi Perfil ---------- */
+    .contenedor .mi {
+        height: 80px;
+    }
+    
+    .contenedor .mi h1 {
+        font-size: 50px;
+    }
+
+    /* ---------- Seccion de Usuario ---------- */
+    .contenedor .usuario {
+        height: 200px;
+    }
+
+    .contenedor .usuario i {
+        font-size: 100px;
+    }
+
+    .contenedor .usuario p {
+        font-size: 30px;
+    }
+
+    /* ---------- Seccion de mis Tergetas ---------- */
+    .contenedor .targetas {
+        height: 70px;
+    }
+
+    .contenedor .targetas h2 {
+        font-size: 25px;
+    }
+
+    /* ---------- Seccion de Direcciones ---------- */
+    .contenedor .direcciones {
+        height: 70px;
+    }
+
+    .contenedor .direcciones h2 {
+        font-size: 25px;
+    }
+
+    /* ---------- Seccion de Informacion ---------- */
+    .contenedor .informacion {
+        height: 70px;
+    }
+
+    .contenedor .informacion h1 {
+        font-size: 40px;
+    }
+
+    /* ---------- Seccion de Preguntas ---------- */
+    .contenedor .preguntas {
+        height: 70px;
+    }
+
+    .contenedor .preguntas h2 {
+        font-size: 25px;
+    }
+
+    /* ---------- Seccion de terminos y condiciones ---------- */
+    .contenedor .tyc {
+        height: 70px;
+    }
+
+    .contenedor .tyc h2 {
+        font-size: 25px;
+    }
+
+    /* ---------- Seccion de aviso de privacidad ---------- */
+    .contenedor .aviso {
+        height: 70px;
+    }
+
+    .contenedor .aviso h2 {
+        font-size: 25px;
+    }
+
+    /* ---------- Seccion de servicios al cliente ---------- */
+    .contenedor .cliente {
+        height: 70px;
+    }
+
+    .contenedor .cliente h2 {
+        font-size: 25px;
+    }
+}

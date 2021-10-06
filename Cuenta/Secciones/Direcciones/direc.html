@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/906c5a8b2a.js" crossorigin="anonymous"></script>
+    <!-- Link Css -->
+    <link rel="stylesheet" href="styldir.css">
+    <title>Coffe Place</title>
+</head>
+<body>
+
+    <!-- Header -->
+	<header>
+        <a href="../../cuenta.html"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" class="logo"><img src="img-direc/Logo.jpg" alt="Logo"></a>
+    </header>
+
+    <!-- Formulario -->
+    <div class="container">
+        <div class="formu">
+            <h1>Ingresa Tu Dirección</h1>
+            <form class="form">
+                <div class="inputBox">
+                    <input type="text" name="calle" required> <br> 
+                    <span>Calle</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="num" required> <br>  
+                    <span>Número</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="col" required> <br>  
+                    <span>Colonia</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="cod" required> <br>  
+                    <span>Código Postal</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="ciudad" required> <br>  
+                    <span>Ciudad</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="pais" required> <br>  
+                    <span>Pais</span>
+                </div>
+                <input class="botonclick" type="submit" value="Agregar" disabled> 
+            </form>
+        </div>
+
+        <!-- Agregar -->
+        <div class="direc">
+            <div class="box">
+                <svg><rect></rect></svg>
+                <div class="mi">
+                    <h2>Mis Direcciónes</h2>
+                    <div class="direccion">
+                        <!-- <div class="insert">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Calz de la Viga 1419, Col El Retoño 09440, CDMX, Mexico.</p>
+                            <button class="elim">Eliminar</button>
+                            <input type="checkbox" checked>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./direc.js"></script>
+    
+</body>
+</html>

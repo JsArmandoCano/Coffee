@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #804000;
+}
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0 40px;
+    width: 100%;
+    height: 90px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header i {
+    font-size: 70px;
+    color: #fff;
+}
+
+header .logo {
+    position: absolute;
+    right: 80px;
+}
+
+header .logo img {
+    width: 100px;
+    height: 85px;
+    border-radius: 50%;
+}
+
+/* ---------- Titulo ---------- */
+.title {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title h1 {
+    font-size: 80px;
+    color: #fff;
+}
+
+/* ---------- Seccion ---------- */
+section {
+    position: relative;
+    width: 100%;
+    padding: 50px;
+}
+
+section p {
+    font-size: 1.4em;
+    color: #fff;
+    text-align: justify;
+}
+
+section .dona {
+    height: 400px;
+    width: 400px;
+    float: left;
+    shape-outside: url(img-ter/icon-dona.png);
+    margin-right: 20px;
+    shape-margin: 20px;
+}
+
+section .frappe {
+    height: 400px;
+    width: 400px;
+    margin-top: 200px;
+    float: right;
+    shape-outside: url(img-ter/icon-frappe.png);
+    margin-left: 20px;
+    shape-margin: 20px;
+}
+
+section .pastel {
+    height: 400px;
+    width: 400px;
+    margin-top: 200px;
+    float: left;
+    shape-outside: url(img-ter/icon-pastel.png);
+    margin-right: 20px;
+    shape-margin: 20px;
+}
+
+section .snack {
+    height: 400px;
+    width: 400px;
+    margin-top: 300px;
+    float: right;
+    shape-outside: url(img-ter/icon-snack.png);
+    margin-left: 20px;
+    shape-margin: 20px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:991px) {
+
+    header {
+        height: 70px;
+       padding: 0 20px;
+    }
+    
+    header i {
+        font-size: 40px;
+    }
+    
+    header .logo  {
+        right: 20px;
+    }
+    
+    header .logo img {
+        width: 70px;
+        height: 60px;
+    }
+
+    /* ---------- Titulo ---------- */
+    .title {
+        height: 50px;
+    }
+
+    .title h1 {
+        font-size: 25px;
+    }
+
+    /* ---------- Seccion ---------- */
+    section {
+        padding: 16px;
+    }
+
+    section p {
+        font-size: 12px;
+    }
+
+    section .dona {
+        height: 100px;
+        width: 100px;
+        margin-right: 5px;
+        shape-margin: 5px;
+    }
+
+    section .frappe {
+        height: 100px;
+        width: 100px;
+        margin-left: 5px;
+        shape-margin: 5px;
+    }
+
+    section .pastel {
+        height: 100px;
+        width: 100px;
+        margin-top: 400px;
+        margin-right: 5px;
+        shape-margin: 5px;
+    }
+
+    section .snack {
+        height: 100px;
+        width: 100px;
+        margin-left: 5px;
+        shape-margin: 5px;
+    }
+}

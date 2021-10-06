@@ -1,0 +1,1134 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 300vh;
+    background-color: #804000;
+}
+
+/* ---------- Seccion de header ---------- */
+header {
+    font-family: 'Quicksand', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 40px;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 1s;
+    z-index: 1000;
+}
+
+header.sticky {
+    height: 90px;
+}
+
+header .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+header.sticky .banner {
+    opacity: 0.5;
+}
+
+header .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 1s;
+    text-decoration: none;
+    z-index: 1;
+}
+
+header .logo img {
+    width: 370px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+header.sticky .logo {
+    position: absolute;
+    left: 100px;
+    transform: translate(0,-50%);
+}
+
+header.sticky .logo img {
+    width: 100px;
+    height: 85px;
+    border-radius: 50%;
+}
+/* ---------- Termina header ---------- */
+
+/* ---------- Empieza Barra de Navegacion ---------- */
+nav {
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+    transition: 0.25s;
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+header.sticky nav ul {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0.75s;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li.activado {
+    border-top: 3px solid #DBA37D;
+    border-bottom: 3px solid #DBA37D;
+}
+
+nav ul li a {
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #DBA37D;
+}
+/* ---------- Termina Barra de Navegacion ---------- */
+
+/* ---------- Empieza Scroll Arriba ---------- */
+.scrolltop {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 800px;
+	right: 40px;
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+	border-radius: 50%;
+	background-size: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+    border: 3px solid #804000;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+	cursor: pointer;
+	z-index: 100;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.scrolltop.active {
+	bottom: 40px;
+    color: #804000;
+	visibility: visible;
+	opacity: 1;
+}
+/* ---------- Termina Scroll Arriba ---------- */
+
+/* ---------- Defino Grid ---------- */
+.contenedor {
+    width: 100%;
+    display: grid;
+    grid-gap: 5px;
+    padding: 0 16px;
+    overflow-x: hidden;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: (11, auto);
+
+    grid-template-areas: "carrusel   carrusel   carrusel   carrusel   carrusel   carrusel   carrusel   carrusel"
+                         "titulo     titulo     titulo     titulo     titulo     titulo     titulo     titulo"
+                         "frase      frase      frase      frase      frase      frase      frase      frase"
+                         "comencemos comencemos comencemos imagen     imagen     imagen     imagen     imagen"
+                         "escoje     escoje     escoje     escoje     escoje     escoje     escoje     escoje"
+                         "menu       menu       menu       menu       menu       menu       menu       menu"
+                         "nosotros   nosotros   nosotros   nosotros   nosotros   nosotros   nosotros   nosotros"
+                         "video-1    video-1    video-1    video-1    video-2    video-2    video-2    video-2"
+                         "sucursal   sucursal   sucursal   sucursal   sucursal   maps       maps       maps"
+                         "patro      patro      patro      patro      patro      patro      patro      patro"
+                         "footer     footer     footer     footer     footer     footer     footer     footer";
+}
+
+/* ---------- Estilos de Carrusel ---------- */
+.contenedor .carrusel {
+    grid-area: carrusel;
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 300px;
+    overflow: hidden;
+}
+
+.contenedor .carrusel .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor .carrusel .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+}
+
+.contenedor .carrusel .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor .carrusel .swiper-slide .info {
+    position: absolute;
+    bottom: 10PX;
+    right: 40px;
+    border-radius: 10px;
+    border: solid 3px red;
+    background: rgba(255, 255, 255, 0.3);
+    width: 500px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor .carrusel .swiper-slide .info p {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #000;
+}
+
+.contenedor .carrusel .swiper-slide .info p span {
+    color: red;
+}
+
+.contenedor .carrusel .swiper-slide .info a {   
+    background-color: red;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+/* ---------- Termina Estilos de Carrusel ---------- */
+
+/* ---------- Empieza Titulo ---------- */
+.contenedor .titulo {
+    grid-area: titulo;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    height: 80px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .titulo h1 {
+    color: #fff;
+    font-size: 70px;
+}
+/* ---------- Termina Titulo ---------- */
+
+/* ---------- Empieza Frase ---------- */
+.contenedor .frase {
+    grid-area: frase;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    height: 150px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    border-top: solid 3px #000;
+    border-bottom: solid 3px #000;
+}
+
+.contenedor .frase p {
+    padding: 10px 30px;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.contenedor .frase p span {
+    float: right;
+}
+/* ---------- Termina Frase ---------- */
+
+/* ---------- Comencemos ---------- */
+.contenedor .comencemos {
+    grid-area: comencemos;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #000;
+    width: 100%;
+    height: 100px;
+    margin-top: 50px;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .comencemos h2 {
+    color: #fff;
+    font-size: 50px;
+}
+/* ---------- Termina Comencemos ---------- */
+
+/* ---------- Empieza Imagen ---------- */
+.contenedor .imagen {
+    grid-area: imagen;
+    width: 100%;
+    height: 100px;
+    margin-top: 50px;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .imagen .img {
+    width: 120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor .imagen .img img {
+    width: 100%;
+    height: 80%;
+}
+/* ---------- Termina Imagen ---------- */
+
+/* ---------- Empieza Seccion de Escoger ---------- */
+.contenedor .escoje {
+    grid-area: escoje;
+    font-family: 'Great Vibes', cursive;
+    width: 100%;
+    height: 100px;
+    margin-top: 40px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .escoje h2 {
+    color: #fff;
+    font-size: 80px;
+}
+/* ---------- Termina Seccion de Escoger ---------- */
+
+/* ---------- Empieza Menu ---------- */
+.contenedor .menu {
+    grid-area: menu;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+    padding: 20px 0;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+/* ---------- Cafe ---------- */
+.contenedor .menu .cafe {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+.contenedor .menu .cafe a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .menu .cafe:hover a img {
+    transform: scale(1.15);
+}
+
+.contenedor .menu .cafe p {
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* ---------- Frappe ---------- */
+.contenedor .menu .frappe {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+.contenedor .menu .frappe a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .menu .frappe:hover a img {
+    transform: scale(1.15);
+}
+
+.contenedor .menu .frappe p {
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* ---------- Chocolate ---------- */
+.contenedor .menu .choco {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+.contenedor .menu .choco a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .menu .choco:hover a img {
+    transform: scale(1.15);
+}
+
+.contenedor .menu .choco p {
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* ---------- Donas ---------- */
+.contenedor .menu .donas {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+.contenedor .menu .donas a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .menu .donas:hover a img {
+    transform: scale(1.15);
+}
+
+.contenedor .menu .donas p {
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* ---------- Pastel ---------- */
+.contenedor .menu .pastel {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+.contenedor .menu .pastel a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .menu .pastel:hover a img {
+    transform: scale(1.15);
+}
+
+.contenedor .menu .pastel p {
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* ---------- Snacks ---------- */
+.contenedor .menu .snacks {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+.contenedor .menu .snacks a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .menu .snacks:hover a img {
+    transform: scale(1.15);
+}
+
+.contenedor .menu .snacks p {
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+}
+/* ---------- Termina Menu ---------- */
+
+/* ---------- Empieza Nosotros ---------- */
+.contenedor .nosotros {
+    grid-area: nosotros;
+    font-family: 'Great Vibes', cursive;
+    width: 100%;
+    height: 100px;
+    margin-top: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.contenedor .nosotros h2 {
+    font-size: 100px;
+    color: #fff;
+}
+/* ---------- Termina Nosotros ---------- */
+
+/* ---------- Empieza Video 1 ---------- */
+.contenedor .video-1 {
+    grid-area: video-1;
+    border: 2px solid #fff;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;   
+}
+
+.contenedor .video-1 video {
+    width: 100%;
+}
+
+.contenedor .video-1 .text-video1 {
+    width: 100%;
+    padding: 5px 10px;
+    margin-top: 0;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .video-1 .text-video1 p {
+    text-align: center;
+    color: #fff;
+}
+/* ---------- Termina Video 1 ---------- */
+
+/* ---------- Empieza Video 2 ---------- */
+.contenedor .video-2 {
+    grid-area: video-2;
+    border: 2px solid #fff;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;   
+}
+
+.contenedor .video-2 video {
+    width: 100%;
+}
+
+.contenedor .video-2 .text-video2 {
+    width: 100%;
+    padding: 5px 10px;
+    margin-top: 0;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .video-2 .text-video2 p {
+    text-align: center;
+    color: #fff;
+}
+/* ---------- Termina Video 2 ---------- */
+
+/* ---------- Empieza Sucursal ---------- */
+.contenedor .sucursal { 
+    grid-area: sucursal;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    height: 400px;
+    margin-top: 50px; 
+    overflow: auto;  
+}
+
+.contenedor .sucursal .encuentranos {
+    width: 100%;
+    height: 50px;
+}
+
+.contenedor .sucursal .encuentranos p {
+    font-size: 40px;
+    padding-left: 10px;
+    color: #fff;
+}
+
+.contenedor .sucursal .ubicacion {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 10px;
+    height: 130px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor .sucursal .ubicacion.active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contenedor .sucursal .ubicacion img {
+    width: 100px;
+    height: 100px;
+}
+
+.contenedor .sucursal .ubicacion p {
+    padding: 0 10px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.contenedor .sucursal .ubicacion p span {
+    text-transform: uppercase;
+}
+/* ---------- Termina Sucursal ---------- */
+
+/* ---------- Empieza Maps ---------- */
+.contenedor .maps {
+    grid-area: maps;
+    width: 100%;
+    height: 400px;
+    margin-top: 50px; 
+    overflow: hidden;  
+}
+/* ---------- Termina Maps ---------- */
+
+/* ---------- Empieza Footer ---------- */
+.contenedor .footer {
+    grid-area: footer;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;   
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .footer img {
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor .footer h2 {
+    position: absolute;
+    align-self: flex-start;
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.contenedor .footer .siguenos {
+    position: absolute;
+    width: 90%;
+    height: 50%;
+    box-shadow: 15px 15px 25px rgba(0,0,0,0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ---------- 1 ---------- */ 
+.contenedor .footer .siguenos .siguenos-1 {
+    width: 370px;
+    height: 90%;
+    padding: 10px;
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .footer .siguenos .siguenos-1 h2 {
+    color: #000;
+    font-size: 50px;
+}
+
+.contenedor .footer .siguenos .siguenos-1 .redes {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contenedor .footer .siguenos .siguenos-1 .redes i {
+    font-size: 100px;
+    color: #000;
+    cursor: pointer;
+}
+/* ---------- 3 ---------- */
+.contenedor .footer .siguenos .siguenos-3 {
+    width: 370px;
+    height: 90%;
+    padding: 10px;
+    margin-left: 10px;
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.contenedor .footer .siguenos .siguenos-3 h2 {
+    color: #000;
+    font-size: 40px;
+}
+
+.contenedor .footer .siguenos .siguenos-3 .contact {
+    width: 95%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedor .footer .siguenos .siguenos-3 .contact .cell {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.contenedor .footer .siguenos .siguenos-3 .contact .cell i {
+    font-size: 60px;
+    margin-right: 10px;
+}
+
+.contenedor .footer .siguenos .siguenos-3 .contact .cell p {
+    font-size: 40px;
+}
+
+.contenedor .footer .siguenos .siguenos-3 .contact .watts {
+    display: flex;
+}
+
+.contenedor .footer .siguenos .siguenos-3 .contact .watts i {
+    font-size: 60px;
+    margin-right: 15px;
+}
+
+.contenedor .footer .siguenos .siguenos-3 .contact .watts p {
+    font-size: 40px;
+}
+/* ---------- Termina Footer ---------- */
+
+
+/* ---------- Responsive ---------- */
+@media (max-width:991px) {
+
+    .contenedor {
+        grid-template-columns: repeat(4, 1fr);
+    
+        grid-template-areas: "carrusel   carrusel   carrusel   carrusel"
+                             "titulo     titulo     titulo     titulo"
+                             "frase      frase      frase      frase"
+                             "comencemos comencemos imagen     imagen"
+                             "escoje     escoje     escoje     escoje"
+                             "menu       menu       menu       menu"
+                             "nosotros   nosotros   nosotros   nosotros"
+                             "video-1    video-1    video-1    video-1"
+                             "video-2    video-2    video-2    video-2"
+                             "sucursal   sucursal   sucursal   sucursal"
+                             "maps       maps       maps       maps"
+                             "footer     footer     footer     footer";
+    }
+
+    header.sticky {
+        height: 90px;
+    }
+
+    header.sticky .logo {
+        left: 16px;
+    }
+
+    header.sticky .banner {
+        opacity: 0;
+    }
+
+    header .logo img {
+        width: 250px;
+        height: 230px;
+    }
+
+    header.sticky .logo img {
+        width: 95px;
+        height: 80px;
+    }
+
+    nav ul {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav.active ul {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 80px);
+        background-image: url(img1/fondo-galletas.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10000;
+    }
+
+    nav ul li a {
+        font-size: 2em;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        color: #000;
+        font-weight: 900;
+    }
+
+    header.sticky .toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #fff url(img1/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header.sticky .toggle.active {
+        background: #fff url(img1/close.png);
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    /* ---------- Scroll Responsive ---------- */
+    .scrolltop {
+        right: 20px;
+    }
+
+    /* ---------- Carrusel Responsive ----------  ----------*/
+    .contenedor .carrusel {
+        height: 150px;
+    }
+
+    .contenedor .carrusel .swiper-slide .info {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80%;
+        height: 100px;
+        padding: 10px;
+    }
+    
+    .contenedor .carrusel .swiper-slide .info p {
+        font-size: 12px;
+    }
+    
+    .contenedor .carrusel .swiper-slide .info a {   
+        background-color: red;
+        padding: 5px;
+        margin-top: 12px;
+        font-size: 12px;
+    }
+
+    .contenedor .carrusel .swiper-button-next {
+        display: none;
+    }
+
+    .contenedor .carrusel .swiper-button-prev {
+        display: none;
+    }
+
+    /* ---------- Titulo Responsive ---------- */
+    .contenedor .titulo {
+        height: 40px;
+        margin-top: 5px;
+    }
+
+    .contenedor .titulo h1 {
+        color: #fff;
+        font-size: 20px;
+    }
+
+    /* ---------- Frase Resposive ---------- */
+    .contenedor .frase {
+        height: 75px;
+        margin-top: 0;
+        border-top: solid 1px #000;
+        border-bottom: solid 1px #000;
+    }
+
+    .contenedor .frase p {
+        padding: 5px 5px;
+        font-size: 15px;
+    }
+
+    /* ---------- Comencemos Responsive ---------- */
+    .contenedor .comencemos {
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .contenedor .comencemos h2 {
+        color: #fff;
+        font-size: 12px;
+    }
+
+    /* ---------- Imagen Responsive ---------- */
+    .contenedor .imagen {
+        height: 60px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+
+    .contenedor .imagen .img {
+        width: 90px;
+    }
+
+    .contenedor .imagen .img img {
+        width: 100%;
+        height: 80%;
+    }
+    
+    /* ---------- Escoge Responsive ---------- */
+    .contenedor .escoje {
+        height: 70px;
+        margin-top: 20px;   
+    }
+
+    .contenedor .escoje h2 {
+        font-size: 43px;
+    }
+
+    /* Menu Responsive */
+    .contenedor .menu {
+        margin-top: 0;
+    }
+
+    /* Nosotros Responsive */
+    .contenedor .nosotros h2 {
+        font-size: 70px;
+    }
+    
+    /* Video 1 Responsive */
+    .contenedor .video-1 {
+        padding-bottom: 12px;
+    }
+
+    .contenedor .video-1 .text-video1 p {
+        font-size: 14px;
+    }
+
+    /* ---------- Video 2 Responsive ---------- */
+    .contenedor .video-2 {
+        padding-bottom: 12px;
+    }
+
+    .contenedor .video-2 .text-video2 p {
+        font-size: 14px;
+    }
+
+    /* ---------- Sucursal Responsive ---------- */
+    .contenedor .sucursal {
+        height: auto;
+        overflow: hidden; 
+        margin-top: 30px; 
+    }
+
+    .contenedor .sucursal .encuentranos p {
+        text-align: center;
+    }
+    
+    .contenedor .sucursal .ubicacion p {
+        font-size: 12px;
+    }
+
+    /* ---------- Maps Responsive ---------- */
+    .contenedor .maps {
+        margin-top: 20px;  
+    }
+
+    /* ---------- Footer Responsive ---------- */
+    .contenedor .footer {
+        height: 100%;
+        background-color: #000;
+    }
+
+    .contenedor .footer img {
+        display: none;
+    }
+
+    .contenedor .footer h2 {
+        font-size: 40px;
+    }
+
+    .contenedor .footer .siguenos {
+        position: relative;
+        width: 90%;
+        height: auto;
+        margin-top: 10px;
+    }    
+
+    .contenedor .footer .siguenos .siguenos-1 {
+        width: 200px;
+        height: 50%;
+        border-right: 0;
+        border-left: 0;
+    }
+
+    .contenedor .footer .siguenos .siguenos-1 h2 {
+        font-size: 25px;
+        color: #fff;
+    }
+
+    .contenedor .footer .siguenos .siguenos-1 .redes {
+        margin-top: 10px;
+    }
+
+    .contenedor .footer .siguenos .siguenos-1 .redes i {
+        font-size: 50px;
+        color: #fff;
+    }
+
+    .contenedor .footer .siguenos .siguenos-2 {
+        display: none;
+    }
+
+    .contenedor .footer .siguenos .siguenos-3 {
+        width: 200px;
+        height: 50%;
+        margin-left: 0;
+        border-right: 0;
+        border-left: 0;
+    }
+    
+    .contenedor .footer .siguenos .siguenos-3 h2 {
+        font-size: 25px;
+        color: #fff;
+    }
+
+    .contenedor .footer .siguenos .siguenos-3 .contact {
+        margin-top: 40px;
+    }
+    
+    .contenedor .footer .siguenos .siguenos-3 .contact .cell {
+        margin-bottom: 15px;
+    }
+    
+    .contenedor .footer .siguenos .siguenos-3 .contact .cell i {
+        font-size: 30px;
+        color: #fff;
+    }
+    
+    .contenedor .footer .siguenos .siguenos-3 .contact .cell p {
+        font-size: 20px;
+        font-weight: 900;
+        color: #fff;
+    }
+    
+    .contenedor .footer .siguenos .siguenos-3 .contact .watts i {
+        font-size: 30px;
+        color: #fff;
+    }
+    
+    .contenedor .footer .siguenos .siguenos-3 .contact .watts p {
+        font-size: 20px;
+        font-weight: 900;
+        color: #fff;
+    }
+}

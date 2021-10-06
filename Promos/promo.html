@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylpromo.css">
+    <!-- Swiper Js -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<!-- Swiper Js -->
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<title>Coffe Place</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="img-promo/fondo.jpg" alt="ImgLogo" class="banner">
+        <a href="#" class="logo"><img src="img-promo/Logo.jpg" alt="Logo"></a>
+        <div class="toggle"></div>
+
+        <nav>
+            <ul>
+                <li><a href="../Pagina Principal/principal.html">Home</a></li>
+                <li><a href="../Cuenta/cuenta.html">Mi Cuenta</a></li>
+                <li><a href="../Productos/prod.html">Ordenar</a></li>
+                <li class="activado"><a href="./promo.html">Promociones</a></li>
+                <li><a href="../index.html">Salir</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="contenedor">
+        
+        <section class="promos">
+            <h2>Promociones</h2>
+        </section>
+
+        <section class="carr-promo">
+            <!-- Swiper -->
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img-promo/lunes.jpeg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img-promo/martes.jpeg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img-promo/miercoles.jpeg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img-promo/jueves.jpeg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img-promo/viernes.jpeg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img-promo/finde.jpeg" />
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        //Para nav
+        const nav = document.querySelector('nav');
+        document.querySelector('.toggle').onclick = function() {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+
+        //Para Carrusel
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+            },
+          });
+    </script>
+
+</body>
+</html>

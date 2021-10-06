@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #804000;
+}
+
+/* ---------- Seccion de header ---------- */
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0 40px;
+    width: 100%;
+    height: 90px;
+    background: #000;
+}
+
+header .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+header .logo {
+    position: absolute;
+    left: 80px;
+}
+
+header .logo img {
+    width: 100px;
+    height: 85px;
+    border-radius: 50%;
+}
+/* ---------- Termina header ---------- */
+
+/* ---------- Empieza Barra de Navegacion ---------- */
+nav {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 16px;
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li.activado {
+    border-top: 3px solid #DBA37D;
+    border-bottom: 3px solid #DBA37D;
+}
+
+nav ul li a {
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #DBA37D;
+}
+/* ---------- Termina Barra de Navegacion ---------- */
+
+/* ---------- Defino Grid ---------- */
+.contenedor {
+    width: 100%;
+    padding: 0 16px;
+}
+
+/* ---------- Encabezado de Promociones ---------- */
+.contenedor .promos {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .promos h2 {
+    font-size: 80px;
+    color: #fff;
+}
+
+/* ---------- Empieza Carrusel ---------- */
+.contenedor .carr-promo {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+.contenedor .carr-promo .swiper-container {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    overflow-x: hidden;
+}
+
+.contenedor .carr-promo .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.contenedor .carr-promo .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor .carr-promo .swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:991px) {
+    
+    header {
+        height: 90px;
+    }
+
+    header .logo {
+        left: 16px;
+        top: 5px;
+    }
+
+    header .banner {
+        opacity: 0;
+    }
+
+    header .logo img {
+        width: 95px;
+        height: 80px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav.active ul {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 90px);
+        background-image: url(img-promo/fondo-galletas.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+    }
+
+    nav ul li a {
+        font-size: 2em;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        color: #000;
+        font-weight: 700;
+    }
+
+    header .toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #fff url(img-promo/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header .toggle.active {
+        background: #fff url(img-promo/close.png);
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }  
+
+    /* ---------- Encabezado de Promociones ---------- */
+    .contenedor .promos {
+        height: 60px;
+    }
+
+    .contenedor .promos h2 {
+        font-size: 40px;
+    }
+}

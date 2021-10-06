@@ -1,0 +1,4261 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #804000;
+}
+
+/* ---------- Seccion de header ---------- */
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0 40px;
+    width: 100%;
+    height: 90px;
+    background: #000;
+}
+
+header .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+header .logo {
+    position: absolute;
+    left: 80px;
+}
+
+header .logo img {
+    width: 100px;
+    height: 85px;
+    border-radius: 50%;
+}
+/* ---------- Termina header ---------- */
+
+/* ---------- Empieza Barra de Navegacion ---------- */
+nav {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 16px;
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li.activado {
+    border-top: 3px solid #DBA37D;
+    border-bottom: 3px solid #DBA37D;
+}
+
+nav ul li a {
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #DBA37D;
+}
+/* ---------- Termina Barra de Navegacion ---------- */
+
+/* ---------- Carrito ---------- */
+.carrito, .carrito::before, .carrito::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 7px;
+    position: sticky;
+    top: 10px;
+    z-index: 20;
+    margin-left: 10px;
+}
+
+.carrito a {
+    color: #DBA37D;
+    text-decoration: none;
+}
+
+.carrito .tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.carrito tr {
+    margin: 0;
+    padding-left: 0;
+    border-bottom: 2px solid #fff;
+}
+
+.carrito th {
+    color: chocolate;
+}
+
+.carrito td {
+    color: #fff;
+    text-align: left;
+}
+
+.carrito .input {
+    width: 35px;
+    height: 20px;
+    padding-left: 3px;
+}
+
+.carrito .elimina {
+    width: 40px;
+}
+
+.carrito .elimina button {
+    padding: 5px;
+    background-color: #000;
+    color: red;
+    border: 2px solid red;
+    cursor: pointer;
+}
+
+.carrito p {
+    font-size: 25px;
+}
+
+.carrito .termina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #804000;
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.carrito .termina .total {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.carrito .termina button {
+    padding: 5px;
+    background-color: #000;
+    color: green;
+    border: solid 2px green;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.carrito .cerrar {
+    outline: none;
+    background-color: transparent;
+    border: 0px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    transform: translateX(-60px) rotate(90deg);
+}
+
+.carrito .cerrar.active {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 2s;
+    opacity: 1;
+    transform: translateX(0px) rotate(360deg);
+}
+
+.carrito .cerrar .bar {
+    display: inline-block;
+    height: 2px;
+    width: 20px;
+    position: relative;
+    margin-bottom: 5px;
+    background-color: #DBA37D;
+}
+
+.carrito .cerrar .bar:nth-of-type(1) {
+    transform: rotate(45deg) translateY(9px);
+}
+
+
+.carrito .cerrar .bar:nth-of-type(2) {
+    transform: rotate(-45deg) translateY(-9px);
+}
+
+.carrito .share {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    overflow: hidden;
+    line-height: 50px;
+    border-radius: 25px;
+    position: relative;
+    background-color: #fff;
+    transition: width 285ms cubic-bezier(0.4, 0, 0.2, 1) 0.2s, height 325ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    text-align: center;
+    box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.35);
+    color: #000;
+}
+
+.carrito .share .togle {
+    display: block;
+    width: 100%;
+}
+
+.carrito .share.active {
+    width: 400px;
+    height: 300px;
+    transition: width 285ms cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 325ms cubic-bezier(0.4, 0, 0.2, 1) 0.2s;;
+    box-shadow: 0px 5px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.carrito .share.active .content-carr {
+    opacity: 1;
+    transform-origin: center center;
+    height: 250px;
+    transform: scale(1, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+    overflow: auto;
+}
+
+.carrito .share.active .content-carr::-webkit-scrollbar {
+    width: 5px;
+}
+
+.carrito .share.active .content-carr::-webkit-scrollbar-thumb {
+    background-color: #fff;
+}
+
+.carrito .share.active .content-carr .text-carr {
+    transition-delay: 0.6s;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.carrito .share.active .togle span {
+    transform: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    transform: translateX(-130px);
+}
+
+.carrito .share span {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.carrito .share .content-carr {
+    transform: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    width: 100%;
+    height: 0%;
+    padding: 0px 15px;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: #000;
+    transform: scale(1, 0);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.carrito .share .content-carr .text-carr {
+    transition: 300ms all;
+    opacity: 0;
+    transform: translateY(20px);
+}
+/* ---------- Termina Carrito ---------- */
+
+/* ---------- Empieza Seccion de Productos ---------- */
+.productos {
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 10000;
+}
+
+.productos .list {
+    cursor: pointer;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productos .list.active {
+    border-top: 2px solid red;
+}
+
+.productos .list img {
+    width: 50px;
+}
+
+.productos .list p {
+    font-size: 20px;
+}
+/* ---------- Termina Seccion de Productos ---------- */
+
+/* ---------- Defino Grid ---------- */
+.contenedor {
+    width: 100%;
+    display: grid;
+    grid-gap: 7px;
+    padding: 0 16px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: (18, auto);
+
+    grid-template-areas: "cafe      cafe      cafe      cafe      cafe        cafe        cafe        cafe"
+                         "expreso   expreso   expreso   expreso   late        late        late        late"
+                         "moka      moka      moka      moka      capu        capu        capu        capu"
+                         "frappe    frappe    frappe    frappe    frappe      frappe      frappe      frappe"
+                         "oreo      oreo      oreo      oreo      clasico     clasico     clasico     clasico"
+                         "mango     mango     mango     mango     velvet      velvet      velvet      velvet"
+                         "choco     choco     choco     choco     choco       choco       choco       choco"
+                         "clascho   clascho   clascho   clascho   bombones    bombones    bombones    bombones"
+                         "blanco    blanco    blanco    blanco    alme        alme        alme        alme"
+                         "donas     donas     donas     donas     donas       donas       donas       donas"
+                         "glass     glass     glass     glass     azucarada   azucarada   azucarada   azucarada"
+                         "nutella   nutella   nutella   nutella   homero      homero      homero      homero"
+                         "pasteles  pasteles  pasteles  pasteles  pasteles    pasteles    pasteles    pasteles"
+                         "dchoc     dchoc     dchoc     dchoc     tiramisu    tiramisu    tiramisu    tiramisu"
+                         "deoreo    deoreo    deoreo    deoreo    tres        tres        tres        tres"
+                         "snacks    snacks    snacks    snacks    snacks      snacks      snacks      snacks"
+                         "sandwich  sandwich  sandwich  sandwich  banderillas banderillas banderillas banderillas"
+                         "nachos    nachos    nachos    nachos    papas       papas       papas       papas";
+}
+
+/* ---------- Empieza Cafe ---------- */
+.contenedor .cafe {
+    grid-area: cafe;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .cafe h2 {
+    font-size: 80px;
+    color: #fff;
+}
+
+/* ---------- Expresso ---------- */
+.contenedor .expreso {
+    grid-area: expreso;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .expreso .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .expreso .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .expreso .img-expreso {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .expreso .img-expreso img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .expreso .img-expreso:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .expreso .inf-expreso {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .expreso .inf-expreso h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .expreso .inf-expreso p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .expreso .inf-expreso .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .expreso .inf-expreso .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .expreso .inf-expreso .botones label {
+    cursor: pointer;
+}
+
+.contenedor .expreso .inf-expreso .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .expreso .inf-expreso .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .expreso .inf-expreso .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .expreso .inf-expreso .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Late ---------- */
+.contenedor .late {
+    grid-area: late;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .late .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .late .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .late .img-late {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .late .img-late img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .late .img-late:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .late .inf-late {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .late .inf-late h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .late .inf-late p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .late .inf-late .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .late .inf-late .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .late .inf-late .botones label {
+    cursor: pointer;
+}
+
+.contenedor .late .inf-late .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .late .inf-late .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .late .inf-late .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .late .inf-late .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Moka ---------- */
+.contenedor .moka {
+    grid-area: moka;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .moka .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .moka .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .moka .img-moka {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .moka .img-moka img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .moka .img-moka:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .moka .inf-moka {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .moka .inf-moka h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .moka .inf-moka p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .moka .inf-moka .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .moka .inf-moka .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .moka .inf-moka .botones label {
+    cursor: pointer;
+}
+
+.contenedor .moka .inf-moka .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .moka .inf-moka .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .moka .inf-moka .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .moka .inf-moka .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Capuchino ---------- */
+.contenedor .capu {
+    grid-area: capu;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.contenedor .capu .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .capu .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .capu .img-capu {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .capu .img-capu img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .capu .img-capu:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .capu .inf-capu {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .capu .inf-capu h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .capu .inf-capu p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .capu .inf-capu .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .capu .inf-capu .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .capu .inf-capu .botones label {
+    cursor: pointer;
+}
+
+.contenedor .capu .inf-capu .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .capu .inf-capu .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .capu .inf-capu .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .capu .inf-capu .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+/* ---------- Termina Cafe ---------- */
+
+/* ---------- Empieza Frappe ---------- */
+.contenedor .frappe {
+    grid-area: frappe;
+    width: 100%;
+    height: 100px;
+    margin-top: 0;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .frappe h2 {
+    font-size: 80px;
+    color: #fff;
+}
+
+/* ---------- oreo ---------- */
+.contenedor .oreo {
+    grid-area: oreo;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .oreo .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .oreo .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .oreo .img-oreo {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .oreo .img-oreo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .oreo .img-oreo:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .oreo .inf-oreo {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .oreo .inf-oreo h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .oreo .inf-oreo p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .oreo .inf-oreo .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .oreo .inf-oreo .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .oreo .inf-oreo .botones label {
+    cursor: pointer;
+}
+
+.contenedor .oreo .inf-oreo .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .oreo .inf-oreo .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .oreo .inf-oreo .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .oreo .inf-oreo .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Clásico ---------- */
+.contenedor .clasico {
+    grid-area: clasico;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .clasico .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .clasico .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .clasico .img-clasico {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .clasico .img-clasico img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .clasico .img-clasico:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .clasico .inf-clasico {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .clasico .inf-clasico h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .clasico .inf-clasico p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .clasico .inf-clasico .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .clasico .inf-clasico .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .clasico .inf-clasico .botones label {
+    cursor: pointer;
+}
+
+.contenedor .clasico .inf-clasico .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .clasico .inf-clasico .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .clasico .inf-clasico .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .clasico .inf-clasico .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Mango ---------- */
+.contenedor .mango {
+    grid-area: mango;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .mango .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .mango .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .mango .img-mango {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .mango .img-mango img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .mango .img-mango:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .mango .inf-mango {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .mango .inf-mango h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .mango .inf-mango p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .mango .inf-mango .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .mango .inf-mango .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .mango .inf-mango .botones label {
+    cursor: pointer;
+}
+
+.contenedor .mango .inf-mango .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .mango .inf-mango .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .mango .inf-mango .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .mango .inf-mango .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Velvet ---------- */
+.contenedor .velvet {
+    grid-area: velvet;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.contenedor .velvet .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .velvet .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .velvet .img-velvet {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .velvet .img-velvet img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .velvet .img-velvet:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .velvet .inf-velvet {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .velvet .inf-velvet h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .velvet .inf-velvet p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .velvet .inf-velvet .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .velvet .inf-velvet .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .velvet .inf-velvet .botones label {
+    cursor: pointer;
+}
+
+.contenedor .velvet .inf-velvet .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .velvet .inf-velvet .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .velvet .inf-velvet .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .velvet .inf-velvet .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+/* ---------- Termina Frappe ---------- */
+
+/* ---------- Empieza Chocolate ---------- */
+.contenedor .choco {
+    grid-area: choco;
+    width: 100%;
+    height: 100px;
+    margin-top: 0;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .choco h2 {
+    font-size: 80px;
+    color: #fff;
+}
+
+/* ---------- Clásico ---------- */
+.contenedor .clascho {
+    grid-area: clascho;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .clascho .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .clascho .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .clascho .img-clascho {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .clascho .img-clascho img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .clascho .img-clascho:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .clascho .inf-clascho {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .clascho .inf-clascho h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .clascho .inf-clascho p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .clascho .inf-clascho .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .clascho .inf-clascho .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .clascho .inf-clascho .botones label {
+    cursor: pointer;
+}
+
+.contenedor .clascho .inf-clascho .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .clascho .inf-clascho .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .clascho .inf-clascho .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .clascho .inf-clascho .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Bombones ---------- */
+.contenedor .bombones {
+    grid-area: bombones;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .bombones .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .bombones .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .bombones .img-bombones {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .bombones .img-bombones img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .bombones .img-bombones:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .bombones .inf-bombones {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .bombones .inf-bombones h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .bombones .inf-bombones p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .bombones .inf-bombones .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .bombones .inf-bombones .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .bombones .inf-bombones .botones label {
+    cursor: pointer;
+}
+
+.contenedor .bombones .inf-bombones .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .bombones .inf-bombones .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .bombones .inf-bombones .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .bombones .inf-bombones .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Blanco ---------- */
+.contenedor .blanco {
+    grid-area: blanco;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.contenedor .blanco .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .blanco .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .blanco .img-blanco {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .blanco .img-blanco img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .blanco .img-blanco:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .blanco .inf-blanco {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .blanco .inf-blanco h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .blanco .inf-blanco p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .blanco .inf-blanco .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .blanco .inf-blanco .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .blanco .inf-blanco .botones label {
+    cursor: pointer;
+}
+
+.contenedor .blanco .inf-blanco .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .blanco .inf-blanco .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .blanco .inf-blanco .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .blanco .inf-blanco .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Almendras ---------- */
+.contenedor .alme {
+    grid-area: alme;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.contenedor .alme .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .alme .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .alme .img-alme {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .alme .img-alme img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .alme .img-alme:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .alme .inf-alme {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .alme .inf-alme h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .alme .inf-alme p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .alme .inf-alme .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .alme .inf-alme .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .alme .inf-alme .botones label {
+    cursor: pointer;
+}
+
+.contenedor .alme .inf-alme .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .alme .inf-alme .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .alme .inf-alme .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .alme .inf-alme .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Termina Chocolate ---------- */
+
+/* ---------- Empieza Donas ---------- */
+.contenedor .donas {
+    grid-area: donas;
+    width: 100%;
+    height: 100px;
+    margin-top: 0;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .donas h2 {
+    font-size: 80px;
+    color: #fff;
+}
+
+/* ---------- Glaseada ---------- */
+.contenedor .glass {
+    grid-area: glass;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .glass .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .glass .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .glass .img-glass {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .glass .img-glass img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .glass .img-glass:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .glass .inf-glass {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .glass .inf-glass h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .glass .inf-glass p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .glass .inf-glass .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .glass .inf-glass .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .glass .inf-glass .botones label {
+    cursor: pointer;
+}
+
+.contenedor .glass .inf-glass .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .glass .inf-glass .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .glass .inf-glass .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .glass .inf-glass .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Azucarada ---------- */
+.contenedor .azucarada {
+    grid-area: azucarada;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .azucarada .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .azucarada .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .azucarada .img-azucarada {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .azucarada .img-azucarada img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .azucarada .img-azucarada:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .azucarada .inf-azucarada {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .azucarada .inf-azucarada h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .azucarada .inf-azucarada p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .azucarada .inf-azucarada .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .azucarada .inf-azucarada .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .azucarada .inf-azucarada .botones label {
+    cursor: pointer;
+}
+
+.contenedor .azucarada .inf-azucarada .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .azucarada .inf-azucarada .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .azucarada .inf-azucarada .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .azucarada .inf-azucarada .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Nutella ---------- */
+.contenedor .nutella {
+    grid-area: nutella;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .nutella .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .nutella .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .nutella .img-nutella {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .nutella .img-nutella img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .nutella .img-nutella:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .nutella .inf-nutella {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .nutella .inf-nutella h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .nutella .inf-nutella p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .nutella .inf-nutella .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .nutella .inf-nutella .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .nutella .inf-nutella .botones label {
+    cursor: pointer;
+}
+
+.contenedor .nutella .inf-nutella .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .nutella .inf-nutella .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .nutella .inf-nutella .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .nutella .inf-nutella .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Homero ---------- */
+.contenedor .homero {
+    grid-area: homero;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.contenedor .homero .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .homero .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .homero .img-homero {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .homero .img-homero img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .homero .img-homero:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .homero .inf-homero {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .homero .inf-homero h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .homero .inf-homero p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .homero .inf-homero .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .homero .inf-homero .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .homero .inf-homero .botones label {
+    cursor: pointer;
+}
+
+.contenedor .homero .inf-homero .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .homero .inf-homero .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .homero .inf-homero .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .homero .inf-homero .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Termina Donas ---------- */
+
+/* ---------- Empieza Pastel ---------- */
+.contenedor .pasteles {
+    grid-area: pasteles;
+    width: 100%;
+    height: 100px;
+    margin-top: 0;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .pasteles h2 {
+    font-size: 80px;
+    color: #fff;
+}
+
+/* ---------- De Chocolate ---------- */
+.contenedor .dchoc {
+    grid-area: dchoc;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .dchoc .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .dchoc .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .dchoc .img-dchoc {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .dchoc .img-dchoc img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .dchoc .img-dchoc:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .dchoc .inf-dchoc {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .dchoc .inf-dchoc h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .dchoc .inf-dchoc p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .dchoc .inf-dchoc .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .dchoc .inf-dchoc .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .dchoc .inf-dchoc .botones label {
+    cursor: pointer;
+}
+
+.contenedor .dchoc .inf-dchoc .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .dchoc .inf-dchoc .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .dchoc .inf-dchoc .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .dchoc .inf-dchoc .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Tiramisu ---------- */
+.contenedor .tiramisu { 
+    grid-area: tiramisu;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .tiramisu .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .tiramisu .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .tiramisu .img-tiramisu {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .tiramisu .img-tiramisu img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .tiramisu .img-tiramisu:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .tiramisu .inf-tiramisu {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .tiramisu .inf-tiramisu h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .tiramisu .inf-tiramisu p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .tiramisu .inf-tiramisu .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .tiramisu .inf-tiramisu .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .tiramisu .inf-tiramisu .botones label {
+    cursor: pointer;
+}
+
+.contenedor .tiramisu .inf-tiramisu .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .tiramisu .inf-tiramisu .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .tiramisu .inf-tiramisu .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .tiramisu .inf-tiramisu .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- De Oreo ---------- */
+.contenedor .deoreo {
+    grid-area: deoreo;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .deoreo .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .deoreo .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .deoreo .img-deoreo {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .deoreo .img-deoreo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .deoreo .img-deoreo:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .deoreo .inf-deoreo {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .deoreo .inf-deoreo h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .deoreo .inf-deoreo p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .deoreo .inf-deoreo .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .deoreo .inf-deoreo .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .deoreo .inf-deoreo .botones label {
+    cursor: pointer;
+}
+
+.contenedor .deoreo .inf-deoreo .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .deoreo .inf-deoreo .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .deoreo .inf-deoreo .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .deoreo .inf-deoreo .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- De Chocolate ---------- */
+.contenedor .tres {
+    grid-area: tres;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.contenedor .tres .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .tres .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .tres .img-tres {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .tres .img-tres img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .tres .img-tres:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .tres .inf-tres {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .tres .inf-tres h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .tres .inf-tres p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .tres .inf-tres .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .tres .inf-tres .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .tres .inf-tres .botones label {
+    cursor: pointer;
+}
+
+.contenedor .tres .inf-tres .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .tres .inf-tres .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .tres .inf-tres .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .tres .inf-tres .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Termina Pastel ---------- */
+
+/* ---------- Empieza Snacks ---------- */
+.contenedor .snacks {
+    grid-area: snacks;
+    width: 100%;
+    height: 100px;
+    margin-top: 0;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .snacks h2 {
+    font-size: 80px;
+    color: #fff;
+}
+
+/* ---------- Sandwich ---------- */
+.contenedor .sandwich {
+    grid-area: sandwich;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .sandwich .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .sandwich .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .sandwich .img-sandwich {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .sandwich .img-sandwich img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .sandwich .img-sandwich:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .sandwich .inf-sandwich {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .sandwich .inf-sandwich h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .sandwich .inf-sandwich p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .sandwich .inf-sandwich .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .sandwich .inf-sandwich .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .sandwich .inf-sandwich .botones label {
+    cursor: pointer;
+}
+
+.contenedor .sandwich .inf-sandwich .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .sandwich .inf-sandwich .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .sandwich .inf-sandwich .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .sandwich .inf-sandwich .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Banderillas ---------- */
+.contenedor .banderillas {
+    grid-area: banderillas;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .banderillas .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .banderillas .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .banderillas .img-banderillas {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .banderillas .img-banderillas img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .banderillas .img-banderillas:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .banderillas .inf-banderillas {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .banderillas .inf-banderillas h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .banderillas .inf-banderillas p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .banderillas .inf-banderillas .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .banderillas .inf-banderillas .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .banderillas .inf-banderillas .botones label {
+    cursor: pointer;
+}
+
+.contenedor .banderillas .inf-banderillas .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .banderillas .inf-banderillas .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .banderillas .inf-banderillas .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .banderillas .inf-banderillas .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Sandwich ---------- */
+.contenedor .nachos {
+    grid-area: nachos;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contenedor .nachos .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .nachos .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .nachos .img-nachos {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .nachos .img-nachos img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .nachos .img-nachos:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .nachos .inf-nachos {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .nachos .inf-nachos h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .nachos .inf-nachos p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .nachos .inf-nachos .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .nachos .inf-nachos .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .nachos .inf-nachos .botones label {
+    cursor: pointer;
+}
+
+.contenedor .nachos .inf-nachos .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .nachos .inf-nachos .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .nachos .inf-nachos .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .nachos .inf-nachos .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+
+/* ---------- Papas ---------- */
+.contenedor .papas {
+    grid-area: papas;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.contenedor .papas .pesos {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+    z-index: 10;
+    background-color: #fff;
+    border: 2px solid green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .papas .pesos p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contenedor .papas .img-papas {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor .papas .img-papas img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+	transition: all 500ms ease-out;
+}
+
+.contenedor .papas .img-papas:hover img {
+    transform: scale(1.15);
+}
+
+.contenedor .papas .inf-papas {
+    margin-left: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor .papas .inf-papas h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .papas .inf-papas p {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #804000;
+}
+
+.contenedor .papas .inf-papas .botones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedor .papas .inf-papas .botones .boton1 {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.contenedor .papas .inf-papas .botones label {
+    cursor: pointer;
+}
+
+.contenedor .papas .inf-papas .botones label input[type="checkbox"] {
+    display: none;
+}
+
+.contenedor .papas .inf-papas .botones label span {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    padding: 10px 15px;
+    color: rgb(243, 247, 4);
+    border: 2px solid rgb(243, 247, 4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    font-size: 15px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.contenedor .papas .inf-papas .botones label span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contenedor .papas .inf-papas .botones label input[type="checkbox"]:checked ~ span {
+    background: rgb(243, 247, 4);
+    color: #fff;
+}
+/* ---------- Termina Pastel ---------- */
+
+/* ---------- Responsive ---------- */
+@media (max-width:991px) {
+
+    .contenedor {
+        grid-template-columns: repeat(4, 1fr);
+    
+        grid-template-areas: "cafe      cafe      cafe      cafe"
+                             "expreso   expreso   expreso   expreso"
+                             "late      late      late      late"
+                             "moka      moka      moka      moka"
+                             "capu      capu      capu      capu"
+                             "frappe    frappe    frappe    frappe"
+                             "oreo      oreo      oreo      oreo"      
+                             "clasico   clasico   clasico   clasico"
+                             "mango     mango     mango     mango"
+                             "velvet    velvet    velvet    velvet"
+                             "choco     choco     choco     choco"
+                             "clascho   clascho   clascho   clascho"   
+                             "bombones  bombones  bombones  bombones"
+                             "blanco    blanco    blanco    blanco"
+                             "alme      alme      alme      alme"
+                             "donas     donas     donas     donas"
+                             "glass     glass     glass     glass"
+                             "azucarada azucarada azucarada azucarada"  
+                             "nutella   nutella   nutella   nutella"
+                             "homero    homero    homero    homero"   
+                             "pasteles  pasteles  pasteles  pasteles"
+                             "dchoc     dchoc     dchoc     dchoc"     
+                             "tiramisu  tiramisu  tiramisu  tiramisu"
+                             "deoreo    deoreo    deoreo    deoreo"
+                             "tres      tres      tres      tres"
+                             "snacks    snacks    snacks    snacks"
+                             "sandwich  sandwich  sandwich  sandwich"  
+                             "banderillas banderillas banderillas banderillas"
+                             "nachos    nachos    nachos     nachos"
+                             "papas     papas     papas      papas";
+    }
+    
+    header {
+        height: 90px;
+    }
+
+    header .logo {
+        left: 16px;
+        top: 5px;
+    }
+
+    header .banner {
+        opacity: 0;
+    }
+
+    header .logo img {
+        width: 95px;
+        height: 80px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav.active ul {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 90px);
+        background-image: url(img-prod/fondo-galletas.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+    }
+
+    nav ul li a {
+        font-size: 2em;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        color: #000;
+        font-weight: 700;
+    }
+
+    header .toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #fff url(img-prod/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header .toggle.active {
+        background: #fff url(img-prod/close.png);
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    /* ---------- Para Carrito ---------- */
+    .carrito .share.active {
+        width: 350px;
+    }
+
+    .carrito, .carrito::before, .carrito::after {
+        margin-left: 5px;
+    }
+
+    .carrito .share.active .togle span {
+        transform: translateX(-120px);
+    }
+
+    /* ---------- Productos Responsive ---------- */
+    .productos {
+        height: 55px;
+        padding-bottom: 7px;
+    }
+
+    .productos .list img {
+        width: 30px;
+    }
+
+    .productos .list p {
+        font-size: 10px;
+    }
+
+    /* ---------- Empieza Cafe ---------- */
+    .contenedor .cafe {
+        height: 60px;
+    }
+
+    .contenedor .cafe h2 {
+        font-size: 50px;
+    }
+
+    .contenedor .expreso .inf-expreso h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .expreso .inf-expreso p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .expreso .inf-expreso .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .expreso .inf-expreso .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }    
+
+    .contenedor .late .inf-late h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .late .inf-late p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .late .inf-late .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .late .inf-late .botones label span  {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .moka .inf-moka h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .moka .inf-moka p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .moka .inf-moka .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .moka .inf-moka .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .capu .inf-capu h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .capu .inf-capu p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .capu .inf-capu .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .capu .inf-capu .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    /* ---------- Empieza Frappe ---------- */
+    .contenedor .frappe {
+        height: 60px;
+    }
+
+    .contenedor .frappe h2 {
+        font-size: 50px;
+    }
+
+    .contenedor .oreo .inf-oreo h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .oreo .inf-oreo p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .oreo .inf-oreo .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .oreo .inf-oreo .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .clasico .inf-clasico h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .clasico .inf-clasico p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .clasico .inf-clasico .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .clasico .inf-clasico .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .mango .inf-mango h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .mango .inf-mango p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .mango .inf-mango .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .mango .inf-mango .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .velvet .inf-velvet h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .velvet .inf-velvet p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .velvet .inf-velvet .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .velvet .inf-velvet .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    /* ---------- Empieza Chocolate ---------- */
+    .contenedor .choco {
+        height: 60px;
+    }
+
+    .contenedor .choco h2 {
+        font-size: 50px;
+    }
+
+    .contenedor .clascho .inf-clascho h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .clascho .inf-clascho p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .clascho .inf-clascho .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .clascho .inf-clascho .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .bombones .inf-bombones h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .bombones .inf-bombones p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .bombones .inf-bombones .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .bombones .inf-bombones .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .blanco .inf-blanco h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .blanco .inf-blanco p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .blanco .inf-blanco .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .blanco .inf-blanco .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .alme .inf-alme h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .alme .inf-alme p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .alme .inf-alme .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .alme .inf-alme .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    /* ---------- Empieza Donas ---------- */
+    .contenedor .donas {
+        height: 60px;
+    }
+
+    .contenedor .donas h2 {
+        font-size: 50px;
+    }
+
+    .contenedor .glass .inf-glass h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .glass .inf-glass p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .glass .inf-glass .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .glass .inf-glass .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .azucarada .inf-azucarada h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .azucarada .inf-azucarada p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .azucarada .inf-azucarada .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .azucarada .inf-azucarada .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .nutella .inf-nutella h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .nutella .inf-nutella p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .nutella .inf-nutella .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .nutella .inf-nutella .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .homero .inf-homero h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .homero .inf-homero p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .homero .inf-homero .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .homero .inf-homero .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    /* ---------- Empieza Pasteles ---------- */
+    .contenedor .pasteles {
+        height: 60px;
+    }
+
+    .contenedor .pasteles h2 {
+        font-size: 50px;
+    }
+
+    .contenedor .dchoc .inf-dchoc h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .dchoc .inf-dchoc p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .dchoc .inf-dchoc .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .dchoc .inf-dchoc .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .tiramisu .inf-tiramisu h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .tiramisu .inf-tiramisu p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .tiramisu .inf-tiramisu .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .tiramisu .inf-tiramisu .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .deoreo .inf-deoreo h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .deoreo .inf-deoreo p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .deoreo .inf-deoreo .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .deoreo .inf-deoreo .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .tres .inf-tres h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .tres .inf-tres p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .tres .inf-tres .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .tres .inf-tres .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    /* ---------- Empieza Snacks ---------- */
+    .contenedor .snacks {
+        height: 60px;
+    }
+
+    .contenedor .snacks h2 {
+        font-size: 50px;
+    }
+
+    .contenedor .sandwich .inf-sandwich h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .sandwich .inf-sandwich p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .sandwich .inf-sandwich .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .sandwich .inf-sandwich .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .banderillas .inf-banderillas h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .banderillas .inf-banderillas p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .banderillas .inf-banderillas .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .banderillas .inf-banderillas .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .nachos .inf-nachos h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .nachos .inf-nachos p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .nachos .inf-nachos .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .nachos .inf-nachos .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+    .contenedor .papas .inf-papas h2 {
+        font-size: 25px;
+    }
+    
+    .contenedor .papas .inf-papas p {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    .contenedor .papas .inf-papas .botones .boton1 {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .contenedor .papas .inf-papas .botones label span {
+        padding: 5px;
+        font-size: 10px;
+    }   
+
+
+}
+
+
+
+@media (max-width:330px) { 
+    /* ---------- Para Carrito ---------- */
+    .carrito .share.active {
+        width: 300px;
+    }
+
+    .carrito, .carrito::before, .carrito::after {
+        margin-left: 5px;
+    }
+
+    .carrito .share.active .togle span {
+        transform: translateX(-100px);
+    }
+}

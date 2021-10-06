@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Swiper Js -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<!-- Swiper Js -->
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/906c5a8b2a.js" crossorigin="anonymous"></script>
+    <!-- Link a Estilos CSS -->
+    <link rel="stylesheet" href="stylesprinc.css">
+    <!-- ScrollReveal -->
+    <script src="./scrollreveal.js"></script>
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<title>Coffe Place</title>
+</head>
+<body>
+
+    <header>
+
+        <!-- Fondo y Logo -->
+        <img src="img1/fondo.jpg" alt="ImgLogo" class="banner">
+        <a href="#" class="logo"><img src="img1/Logo.jpg" alt="Logo"></a>
+        <div class="toggle"></div>
+
+        <!-- Barra de Navegacion  -->
+        <nav>
+            <ul>
+                <li class="activado"><a href="./principal.html">Home</a></li>
+                <li><a href="../Cuenta/cuenta.html">Mi Cuenta</a></li>
+                <li><a href="../Productos/prod.html">Ordenar</a></li>
+                <li><a href="../Promos/promo.html">Promociones</a></li>
+                <li><a href="../index.html">Salir</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Scroll Top -->
+    <div class="scrolltop" onclick="scrollToTop();"><i class="fas fa-chevron-up"></i></div>
+
+    <!-- Contenido de la pantalla principal -->
+    <div class="contenedor">
+
+    <!-- Seccion 1 Carrusel -->
+        <section class="carrusel"> 
+
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="img1/oreo-1.jpeg" alt="Oreo">
+                        <div class="info">
+                            <p> <span>NUEVO FRAPPE DE OREO</span> <br> Pidelo ya!!!! en nuestra sección de Frappes</p>
+                            <a href="../Productos/prod.html">Buscalo en Frappes</a>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <img src="img1/cafep.jpg" alt="Descuento">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <img src="img1/wifi.jpg" alt="Wifi Libre">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <img src="img1/promo2.jpg" alt="Promocion">
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <img src="img1/uber.jpg" alt="UberEats">
+                    </div>
+                </div>                
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+            </div>
+
+        </section>
+
+    <!-- Seccion 2 Titulo -->
+        <section class="titulo">
+            <h1>¿Tomamos un Café?</h1>
+        </section>
+
+    <!-- Seccion de Frase -->
+        <section class="frase">
+            <p>"No hay nada como una taza de café para estimular las células del cerebro". <br> <span>-Sherlock Holmes</span></p>
+        </section>
+
+    <!-- Seccion de Comencemos -->
+        <section class="comencemos">
+            <h2>Comencemos</h2>
+        </section>
+
+    <!-- Seccion de Imagen Cafe -->
+        <section class="imagen">
+            <div class="img"><img src="img1/icono.png" alt="Cafe-Icon"></div>
+            <div class="img"><img src="img1/icono.png" alt="Cafe-Icon"></div>
+            <div class="img"><img src="img1/icono.png" alt="Cafe-Icon"></div>
+            <div class="img"><img src="img1/icono.png" alt="Cafe-Icon"></div>
+            <div class="img"><img src="img1/icono.png" alt="Cafe-Icon"></div>
+        </section>
+
+    <!-- Seccion de Escoger -->
+        <section class="escoje">
+            <h2>Escoge tu Favorito</h2>
+        </section>
+
+    <!-- Seccion de Menu, Cafe, Frappe, etc -->
+        <section class="menu">                                          
+
+            <div class="cafe">
+                <a href="../Productos/prod.html"><img src="img1/cafe.jpg" alt="Café"></a>
+                <p>Cafés</p>
+            </div>
+    
+            <div class="frappe">
+                <a href="../Productos/prod.html"><img src="img1/frappe.jpg" alt="Frappe"></a>
+                <p>Frappes</p>
+            </div>
+    
+            <div class="choco">
+                <a href="../Productos/prod.html"><img src="img1/choco.jpg" alt="Chocolate"></a>
+                <p>Chocolates</p>
+            </div>
+    
+            <div class="donas">
+                <a href="../Productos/prod.html"><img src="img1/donas.jpg" alt="Donas"></a>
+                <p>Donas</p>
+            </div>
+    
+            <div class="pastel">
+                <a href="../Productos/prod.html"><img src="img1/pastel.jpg" alt="Pastel"></a>
+                <p>Pasteles</p>
+            </div>
+    
+            <div class="snacks">
+                <a href="../Productos/prod.html"><img src="img1/snacks.jpeg" alt="Snacks"></a>
+                <p>Snacks</p>
+            </div>
+
+        </section>
+
+    <!-- Seccion de Nosotros -->
+        <section class="nosotros">
+            <h2>Nosotros</h2>
+        </section>
+
+    <!-- Seccion de Videos -->
+        <section class="video-1">
+            <video src="videos/video2.mp4" onloadedmetadata="this.muted=true" autoplay loop muted></video>
+            <div class="text-video1">
+                <p>Bienvenido!!! Un buen día empieza después de probar el mejor café, un gran día termina con el aroma y los sabores del mejor café, y que mejor que tomar ese cafe en Coffe Place.</p>
+            </div>
+        </section>
+
+        <section class="video-2">
+            <video src="videos/video1.mp4" onloadedmetadata="this.muted=true" autoplay loop muted></video>
+            <div class="text-video2">
+                <p>Coffee Place!!!! Sientate, relajate y disfruta de este espacio donde seras bien atendido, podras relajarte y tomar un buen café. ¿Que esperas? Visitanos en nuestra sucursal.</p>
+            </div>
+        </section>
+
+    <!-- Seccion de Localizacion -->
+        <section class="sucursal">
+            <div class="encuentranos"><p>Visitanos</p></div>
+
+            <div class="ubicacion active" data-filter="local-1">
+                <img src="img1/local.jpg" alt="Local">
+                <p> <span>Gran Terraza Coapa</span> <br>Calzada Acoxpa 610 Local L45-A, Colonia Villa Coapa, Alcaldia Tlalpan, C.P. 14390, CDMX. <br> Horario: L-V: 7:00 a 22:00 hrs. S: 08:00 a 22:00 hrs. D: 08:00 a 21:00 hrs.</p>
+            </div>
+
+            <div class="ubicacion" data-filter="local-2">
+                <img src="img1/local-2.jpg" alt="Local">
+                <p> <span>Perisur</span> <br> Anillo Periférico Sur #4690, Col. Ampliación Pedregal de San Angel. C.P. 04500, CDMX. <br> Horario: L-V: 7:00 a 22:00 hrs. S: 08:00 a 22:00 hrs. D: 08:00 a 21:00 hrs.</p>
+            </div>
+
+            <div class="ubicacion" data-filter="local-3">
+                <img src="img1/local-3.png" alt="Local">
+                <p> <span>Plaza Universidad</span> <br> Av. Universidad 1000, Sta Cruz Atoyac, Benito Juárez, 03310 Ciudad de México, CDMX. <br> Horario: L-V: 7:00 a 22:00 hrs. S: 08:00 a 22:00 hrs. D: 08:00 a 21:00 hrs.</p>
+            </div>
+
+            <div class="ubicacion" data-filter="local-4">
+                <img src="img1/local-4.jpg" alt="Local">
+                <p> <span>Plaza Antara Polanco</span> <br> Av Ejército Nacional 843, Granada, Miguel Hidalgo, 11520 Ciudad de México, CDMX.<br> Horario: L-V: 7:00 a 22:00 hrs. S: 08:00 a 22:00 hrs. D: 08:00 a 21:00 hrs.</p>
+            </div>
+        </section>
+
+    <!-- Seccion de Mapa -->
+        <section class="maps">
+            <iframe class="mapa local-1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.7189468309725!2d-99.12977978509542!3d19.294584686962875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce01a08ab020fd%3A0x70fd8b2ed6f90295!2sGran%20Terraza%20Coapa!5e0!3m2!1ses!2smx!4v1623285550297!5m2!1ses!2smx" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe class="mapa local-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.502629338171!2d-99.19402888509532!3d19.303983786957417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdff7fa2270785%3A0xe0f2f5b6d7d1416b!2sGaler%C3%ADas%20Perisur!5e0!3m2!1ses!2smx!4v1623371977354!5m2!1ses!2smx" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe class="mapa local-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.048573491385!2d-99.16820198578267!3d19.36704934779355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffbdd617bc69%3A0x7d3a28b06ea7c923!2sPlaza%20Universidad%2C%20Sta%20Cruz%20Atoyac%2C%2003310%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1623372062536!5m2!1ses!2smx" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe class="mapa local-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.385772926403!2d-99.20445188578152!3d19.43892744551702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2021ad7d389b3%3A0xb83d3f5dc6bb9046!2sAntara%20Fashion%20Hall!5e0!3m2!1ses!2smx!4v1623372125970!5m2!1ses!2smx" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+    <!-- Seccion de Footer -->
+        <footer class="footer">
+
+            <img src="img1/footer.jpg" alt="Fondo">
+            <h2>Información</h2>
+            <div class="siguenos">
+
+                <div class="siguenos-1">
+                    <h2>Síguenos</h2>
+                    <div class="redes">
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-twitter-square"></i>
+                        <i class="fab fa-instagram-square"></i>
+                    </div>
+                </div>
+
+                <div class="siguenos-3">
+                    <h2>Contáctanos</h2>
+                    <div class="contact">
+                        <div class="cell">
+                            <i class="fas fa-phone-alt"></i>
+                            <p>55-5555-5555</p>
+                        </div>
+                        <div class="watts">
+                            <i class="fab fa-whatsapp-square"></i>
+                            <p>55-5555-5555</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+       </footer>
+    </div>
+
+
+    <!--JavaScript-->
+    <script>
+
+        //Para el Header
+        window.addEventListener("scroll", function(){
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        })
+
+        //Para Nav
+        const nav = document.querySelector('nav');
+        document.querySelector('.toggle').onclick = function() {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+        } 
+
+        //Arriba
+        window.addEventListener("scroll", function (){
+			var scroll = document.querySelector(".scrolltop");
+			scroll.classList.toggle("active", window.scrollY > 500)
+		})
+
+		function scrollToTop(){
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			})
+		}
+
+        //Para Carrusel
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+              delay: 3500,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+
+
+        //Para Ubicacion
+        $(document).ready(function(){
+            $('.ubicacion').click(function(){
+                const value = $(this).attr('data-filter');
+                if (value == 'local-1') {
+                    $('.mapa').show('1000');
+                }
+                else {
+                    $('.mapa').not('.'+value).hide('1000');
+                    $('.mapa').filter('.'+value).show('1000');
+                }
+            })
+        })
+
+        $('.ubicacion').click(function(){
+            $(this).addClass('active').siblings().removeClass('active');
+        }) 
+    </script>
+    <script src="./scroll.js"></script>
+
+</body>
